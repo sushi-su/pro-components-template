@@ -11,6 +11,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.13.0
   '@vitejs/plugin-react': ^1.2.0
   antd: ^4.18.9
+  axios: ^0.26.0
   eslint: ^8.10.0
   eslint-config-alloy: ^4.5.1
   eslint-plugin-react: ^7.29.2
@@ -34,6 +35,7 @@ specifiers:
 dependencies:
   '@loadable/component': 5.15.2_react@17.0.2
   antd: 4.18.9_react-dom@17.0.2+react@17.0.2
+  axios: 0.26.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.2_react-dom@17.0.2+react@17.0.2
@@ -1195,6 +1197,14 @@ packages:
     resolution: {integrity: sha512-Pj2IR7u8hmUEDOwB++su6baaRi+QvsgajuFB9j95foM1N2gy5HM4z60hfusIO0fBPG5uLAEl6yCJr1jNSVugEQ==}
     dev: false
 
+  /axios/0.26.0:
+    resolution: {integrity: sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==}
+    dependencies:
+      follow-redirects: 1.14.9
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
@@ -2146,6 +2156,16 @@ packages:
   /flatted/3.2.5:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
     dev: true
+
+  /follow-redirects/1.14.9:
+    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
 
   /fs-extra/10.0.1:
     resolution: {integrity: sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==}
