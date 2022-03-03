@@ -4,7 +4,6 @@ import Loading from '@/components/Loading';
 type loadableProps = Parameters<typeof loadable>;
 
 export const lazyload = (fn: any, options?: loadableProps[1]) => {
-  console.log(fn);
   const Component = loadable(fn, { ...options, fallback: <Loading /> });
 
   Component.preload = fn.requireAsync || fn;
