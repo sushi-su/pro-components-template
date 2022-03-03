@@ -1,12 +1,18 @@
+import type { FC } from 'react';
 import React from 'react';
 import { render } from 'react-dom';
 import '@/styles/global.less';
-import App from '@/pages/App';
 import 'antd/dist/antd.variable.min.css';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { routes } from './routes';
+
+const App: FC = () => {
+  return useRoutes(routes);
+};
 
 render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root'),
 );
