@@ -6,5 +6,11 @@ module.exports = {
     'no-descending-specificity': null,
     'no-duplicate-selectors': null,
     'color-function-notation': null,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen'],
+      },
+    ],
   },
 };

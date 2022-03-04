@@ -1,22 +1,29 @@
-import { Outlet, useNavigate } from 'react-router-dom';
-import { Button, Space } from 'antd';
+import { Outlet } from 'react-router-dom';
+import { Layout } from 'antd';
+import SiderMenu from '@/layout/components/SiderMenu';
+import BaseHeader from '@/layout/components/BaseHeader';
+import BaseFooter from '@/layout/components/BaseFooter';
 
-const Layout = () => {
-  const navigate = useNavigate();
+const { Content } = Layout;
+
+const BaseLayout = () => {
   return (
-    <>
-      <Space>
-        <Button type="link" onClick={() => navigate('/list')}>
-          Page 1
-        </Button>
+    <Layout className="h-full">
+      <BaseHeader />
 
-        <Button type="link" onClick={() => navigate('/table')}>
-          Page 2
-        </Button>
-      </Space>
-      <Outlet />
-    </>
+      <Layout>
+        <SiderMenu />
+
+        <Layout>
+          <Content className="overflow-auto">
+            <Outlet />
+          </Content>
+
+          <BaseFooter />
+        </Layout>
+      </Layout>
+    </Layout>
   );
 };
 
-export default Layout;
+export default BaseLayout;
