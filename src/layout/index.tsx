@@ -17,9 +17,9 @@ const BaseLayout = () => {
         <Layout>
           <Content className="overflow-auto">
             <Outlet />
-          </Content>
 
-          <BaseFooter />
+            <BaseFooter />
+          </Content>
         </Layout>
       </Layout>
     </Layout>

@@ -5,9 +5,9 @@ const { Sider } = Layout;
 
 const SiderMenu: FC = () => {
   return (
-    <Sider>
+    <Sider className="w-[256px]">
       <Menu
-        className="h-full"
+        className="h-full w-[256px]"
         onClick={(e) => {
           console.log(e);
         }}
