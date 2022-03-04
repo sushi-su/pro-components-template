@@ -31,7 +31,7 @@ specifiers:
   dayjs: ^1.10.8
   eslint: ^8.10.0
   eslint-config-alloy: ^4.5.1
-  eslint-plugin-react: ^7.29.2
+  eslint-plugin-react: ^7.29.3
   husky: ^7.0.4
   js-cookie: ^3.0.1
   less: ^4.1.2
@@ -56,7 +56,7 @@ specifiers:
   stylelint-config-standard: ^25.0.0
   typescript: ^4.6.2
   vite: ^2.8.6
-  webpack: ^5.69.1
+  webpack: ^5.70.0
 
 dependencies:
   '@ant-design/charts': 1.3.5_aa1645456f496b30de0be9d8d0907c1d
@@ -100,10 +100,10 @@ devDependencies:
   cross-env: 7.0.3
   eslint: 8.10.0
   eslint-config-alloy: 4.5.1
-  eslint-plugin-react: 7.29.2_eslint@8.10.0
+  eslint-plugin-react: 7.29.3_eslint@8.10.0
   husky: 7.0.4
   less: 4.1.2
-  less-loader: 10.2.0_less@4.1.2+webpack@5.69.1
+  less-loader: 10.2.0_less@4.1.2+webpack@5.70.0
   lint-staged: 12.3.4
   postcss: 8.4.7
   postcss-less: 6.0.0_postcss@8.4.7
@@ -116,7 +116,7 @@ devDependencies:
   stylelint-config-standard: 25.0.0_stylelint@14.5.3
   typescript: 4.6.2
   vite: 2.8.6_less@4.1.2
-  webpack: 5.69.1
+  webpack: 5.70.0
 
 packages:
 
@@ -244,7 +244,7 @@ packages:
       react: '>=16.8.4'
       react-dom: '>=16.8.4'
     dependencies:
-      '@antv/g2plot': 2.4.8
+      '@antv/g2plot': 2.4.9
       react: 17.0.2
       react-content-loader: 5.1.4_react@17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -486,8 +486,8 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@antv/algorithm/0.1.22:
-    resolution: {integrity: sha512-Kx91d8gw2bNCdP6FFfWVTOOt14pwMc1/zEfAhsWp8KKx3dIfmT3q+bcAHf152jLjEUK6xGLkqSkGqGjzbEL6zQ==}
+  /@antv/algorithm/0.1.23:
+    resolution: {integrity: sha512-ncAfXwpO9angkGlZ/4LYsFk+T2hvQI6A+mEEGMslj8wF7ddPdtZ+DK3KFbhfJvQ4iz9Z44sJfdJ/fybwt0g0kA==}
     dependencies:
       '@antv/util': 2.0.17
       tslib: 2.3.1
@@ -654,8 +654,8 @@ packages:
       tslib: 2.3.1
     dev: false
 
-  /@antv/g2plot/2.4.8:
-    resolution: {integrity: sha512-Ox9ZAYKfaZR5q69PQSWPsQKp4fNHJIS6BxMeKLp+OHmwXwVWFYA6YvsxivnKKdom/2QBJGzcA9EwdNUjs1gkQA==}
+  /@antv/g2plot/2.4.9:
+    resolution: {integrity: sha512-Q0DYDfmJZjHXPQLiMo+59spJvIAsFyTMfoxsS4FzCc8yd7OhjoPsKfJYu/1BhG9Uls80bdwUKy3fCEzb0zpjhA==}
     dependencies:
       '@antv/event-emitter': 0.1.3
       '@antv/g2': 4.1.47
@@ -670,7 +670,7 @@ packages:
   /@antv/g6-core/0.6.0:
     resolution: {integrity: sha512-MlFGTi40iTRyMjv9c/1ml0R/ekVihBlX9ASDVLBbVR/lxS2137WIgMN5f/yZkpBAAJR+0D7mbxyPmHt4V+9CYw==}
     dependencies:
-      '@antv/algorithm': 0.1.22
+      '@antv/algorithm': 0.1.23
       '@antv/dom-util': 2.0.4
       '@antv/event-emitter': 0.1.3
       '@antv/g-base': 0.5.10
@@ -694,7 +694,7 @@ packages:
     resolution: {integrity: sha512-XxulAq0GRKz1ys7dnOy8/QfUGcx/opoSEA1LcLDaRsGZ1ftOpMMWOKajYFws7iDIIWBqOVsDwJWLlPJ1X+9hJg==}
     dependencies:
       '@ant-design/colors': 4.0.5
-      '@antv/algorithm': 0.1.22
+      '@antv/algorithm': 0.1.23
       '@antv/dom-util': 2.0.4
       '@antv/event-emitter': 0.1.3
       '@antv/g-base': 0.5.10
@@ -753,11 +753,11 @@ packages:
       '@antv/util': 2.0.17
     dev: false
 
-  /@antv/l7-component/2.7.33:
-    resolution: {integrity: sha512-ptJ0mqave+IvzY0LXCkWwo3k4odiibA8aW0vyGWsexf/MIKJHnPsDUt7rzo4mzkhDYfqeyRV6JVB9U46jOjHYw==}
+  /@antv/l7-component/2.7.34:
+    resolution: {integrity: sha512-dlRVH4/AJtespMrwHKNDUn3hhTlMPAjYip5rd4dR3zvYL1lwTOV1xpI18s03eh7arHUBN1FPHYiYHwagdUmuag==}
     dependencies:
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       eventemitter3: 4.0.7
       inversify: 5.1.1
@@ -765,11 +765,11 @@ packages:
       supercluster: 7.1.4
     dev: false
 
-  /@antv/l7-core/2.7.33:
-    resolution: {integrity: sha512-JW98sjVG/BXi3hp5DAhY7z5LDm+LqpVU2C1/GtkBj58F2kMu3ixoVyvELh+/240+KifHxpxPk872Kf79arTv3g==}
+  /@antv/l7-core/2.7.34:
+    resolution: {integrity: sha512-y7b2rP80xYWU8XASUkIitko58voZ2qT7BIATFQatkhkfzbv727xWhbjzeazTndoDRjPvfNstlLG/5KIEHBWhQA==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       ajv: 6.12.6
       element-resize-event: 3.0.6
@@ -784,13 +784,13 @@ packages:
       viewport-mercator-project: 6.2.3
     dev: false
 
-  /@antv/l7-layers/2.7.33:
-    resolution: {integrity: sha512-kHZdOR6HE9c3wPq0FiwWJKFUm3+clMjTc16ZYt6+CDfkR7R9RKhnlFSX8YV2aaAC6YdM3nfCeQSG1FwO6g5w7Q==}
+  /@antv/l7-layers/2.7.34:
+    resolution: {integrity: sha512-uhozWmzOkOr8RMQsZS9p2C3qR7SUC5tOWnZfd/OaxlZ/+CJbbdV2CfCMdFubDt6Uw24xO6mUaUTyQ+GqZ93ALw==}
     dependencies:
       '@antv/geo-coord': 1.0.8
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-source': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-source': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       '@mapbox/martini': 0.2.0
       '@turf/meta': 6.5.0
@@ -809,10 +809,10 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-map/2.7.33:
-    resolution: {integrity: sha512-AsxN+WTowb9RgdOSFth9jOvFevsAGTDfjITHa+Qoedfi2O+mMLMfio8bi0YZk3yAyZziwGeCfaVlwkTxjNvuag==}
+  /@antv/l7-map/2.7.34:
+    resolution: {integrity: sha512-LG03GY0Y1m0z8HnBoZB4pBp4VYObr5YLz/DJGAI56PnRVyQ/29j0Qa/fg7lWVJz9n3v031uWthYSmVO1gvn0gQ==}
     dependencies:
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       '@mapbox/point-geometry': 0.1.0
       '@mapbox/unitbezier': 0.0.0
@@ -820,13 +820,13 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@antv/l7-maps/2.7.33:
-    resolution: {integrity: sha512-D6L12vo//sznGTC295QR/+2l241lxzPBUTXCHzo/ottoVqBArQvRZuZsTl/vIAVtFkVIVdMRrorImvT5lelV1w==}
+  /@antv/l7-maps/2.7.34:
+    resolution: {integrity: sha512-ZQOg2bfY0yKmUV8NXHhefIWNJBu93yA5KF29swFEWP1BJAsZEzWUW599nEaVw7uk0C+43KFqAAd5R7nrXfXX2A==}
     dependencies:
       '@amap/amap-jsapi-loader': 0.0.3
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-map': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-map': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       '@types/amap-js-api': 1.4.10
       '@types/mapbox-gl': 1.13.3
@@ -837,10 +837,10 @@ packages:
       viewport-mercator-project: 6.2.3
     dev: false
 
-  /@antv/l7-renderer/2.7.33:
-    resolution: {integrity: sha512-RL4nOIfo6SQdm2SOhe9d1l/eJfPimVzUm9cDUrmUqGGgoR+IMeu9Yw4oS9qk0RHmvcCa5V0PRl9hwDMqH4bS4w==}
+  /@antv/l7-renderer/2.7.34:
+    resolution: {integrity: sha512-DHxgOCZl5ApCiJucN41LuqI0Vq97p+BKuUKcgTlYcJHSRXPIKqZYLqIg+J3Swc1pQ3e3LDKaUwwY1HpQV4pHIA==}
     dependencies:
-      '@antv/l7-core': 2.7.33
+      '@antv/l7-core': 2.7.34
       '@babel/runtime': 7.17.2
       inversify: 5.1.1
       l7regl: 0.0.17
@@ -848,27 +848,27 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-scene/2.7.33:
-    resolution: {integrity: sha512-sGyCBAoJGzqNIqYYJrMf4/mDkbYz12UBd3KZnI0f7U7u7BTUpR4awxj2bb35wV9GEaaeqCE1JBZhX1MmU/BcSw==}
+  /@antv/l7-scene/2.7.34:
+    resolution: {integrity: sha512-W8oZzDXhsqkM5V8r16TfGVXqz4Bji+pPMQ/Khzy4/YwmQs7PKJ8U5SFM4rtriGtSKt73zSBogLRjTepkTGEJqg==}
     dependencies:
-      '@antv/l7-component': 2.7.33
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-layers': 2.7.33
-      '@antv/l7-maps': 2.7.33
-      '@antv/l7-renderer': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-component': 2.7.34
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-layers': 2.7.34
+      '@antv/l7-maps': 2.7.34
+      '@antv/l7-renderer': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       inversify: 5.1.1
       mapbox-gl: 1.13.2
       reflect-metadata: 0.1.13
     dev: false
 
-  /@antv/l7-source/2.7.33:
-    resolution: {integrity: sha512-EHCv0Jx0z35Cz0EMWryx4hdgoJyFmHpkwFpI2Hh5R5r2d5F0hh+eqFGLvYt4/QSaXHL2lesRgAZeq3QGWAUHDg==}
+  /@antv/l7-source/2.7.34:
+    resolution: {integrity: sha512-iCtFZgI5nfUlZJwxrV8zO6+PPf33kgszrPIXton1xspYNqSYh5KT9jfiWVyFven6JGlzv0YSW/q+UGv1em2vuw==}
     dependencies:
       '@antv/async-hook': 2.1.0
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
       '@mapbox/geojson-rewind': 0.4.1
       '@turf/helpers': 6.5.0
@@ -883,24 +883,24 @@ packages:
       supercluster: 7.1.4
     dev: false
 
-  /@antv/l7-utils/2.7.33:
-    resolution: {integrity: sha512-5bzHZ1uOGV7Nnb8Bc1TlYBzBJcyilXefwHnsjOC6HH+r4r7TjqeESJKGeNVC1/rs7Fr/3I3mvre6qBCYwfg+Tg==}
+  /@antv/l7-utils/2.7.34:
+    resolution: {integrity: sha512-+U5eSord0WXJQhBjkX/0sosyTYdlZ/HijQtfTC0GuHJEhyQfZ3TkPe6uQS8OwknSWViHseBSnoH78w0itmI+GQ==}
     dependencies:
       '@babel/runtime': 7.17.2
       '@turf/helpers': 6.5.0
       d3-color: 1.4.1
     dev: false
 
-  /@antv/l7/2.7.33:
-    resolution: {integrity: sha512-2ajqyQBs76IiY5iIBx3UAzjfLQzLDtwOaeU8dG5tCK6vVeBQyJJwjSuUitFTw0zs3jcEb3eOXHhrisGvKGkirw==}
+  /@antv/l7/2.7.34:
+    resolution: {integrity: sha512-hjpI+eU5bVPiOIwMqhPjS5bitp69zOW+gbC3yH1c0zFGzJ0Z4kmQFsO9dgj7TeI3kNCkxM22NYRZ1FXlCBB+KQ==}
     dependencies:
-      '@antv/l7-component': 2.7.33
-      '@antv/l7-core': 2.7.33
-      '@antv/l7-layers': 2.7.33
-      '@antv/l7-maps': 2.7.33
-      '@antv/l7-scene': 2.7.33
-      '@antv/l7-source': 2.7.33
-      '@antv/l7-utils': 2.7.33
+      '@antv/l7-component': 2.7.34
+      '@antv/l7-core': 2.7.34
+      '@antv/l7-layers': 2.7.34
+      '@antv/l7-maps': 2.7.34
+      '@antv/l7-scene': 2.7.34
+      '@antv/l7-source': 2.7.34
+      '@antv/l7-utils': 2.7.34
       '@babel/runtime': 7.17.2
     dev: false
 
@@ -915,7 +915,7 @@ packages:
     resolution: {integrity: sha512-OBu6j6x6tWCCQKebjSXZnwil8cbAjXNbDPSjj4Eo3WAOayIpP3SCiQjZfBR2TGBdXuoYnM1x3jCmSoqUv2rrUQ==}
     dependencies:
       '@antv/event-emitter': 0.1.3
-      '@antv/l7': 2.7.33
+      '@antv/l7': 2.7.34
       '@antv/l7plot-component': 0.0.3-alpha.9
       '@antv/util': 2.0.17
       lodash-es: 4.17.21
@@ -978,7 +978,7 @@ packages:
   /@antv/util/2.0.17:
     resolution: {integrity: sha512-o6I9hi5CIUvLGDhth0RxNSFDRwXeywmt6ExR4+RmVAzIi48ps6HUy+svxOCayvrPBN37uE6TAc2KDofRo0nK9Q==}
     dependencies:
-      csstype: 3.0.10
+      csstype: 3.0.11
       tslib: 2.3.1
     dev: false
 
@@ -1016,7 +1016,7 @@ packages:
   /@antv/x6/1.30.1:
     resolution: {integrity: sha512-bdiiKqlHZyQiZ6MrpqE18cFNNO2aWt+ZwSkTE3UlxyPmkAr9JxISwkr771/Fwc10LOV1ImlTAUpfXd8fxYJaAQ==}
     dependencies:
-      csstype: 3.0.10
+      csstype: 3.0.11
       jquery: 3.6.0
       jquery-mousewheel: 3.1.13
       lodash-es: 4.17.21
@@ -1887,7 +1887,7 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
-      csstype: 3.0.10
+      csstype: 3.0.11
     dev: true
 
   /@types/resize-observer-browser/0.1.7:
@@ -2875,8 +2875,8 @@ packages:
     hasBin: true
     dev: true
 
-  /csstype/3.0.10:
-    resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
+  /csstype/3.0.11:
+    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
 
   /d3-array/1.2.4:
     resolution: {integrity: sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==}
@@ -3441,8 +3441,8 @@ packages:
     resolution: {integrity: sha512-rdHaoAyOf4scccQX3bxqmUa85+cvyhPvijqobsZT+Cdt0HGAbhGby3lghmotGOYHACRTtn7gs+oM5pnnmPkXyw==}
     dev: true
 
-  /eslint-plugin-react/7.29.2_eslint@8.10.0:
-    resolution: {integrity: sha512-ypEBTKOy5liFQXZWMchJ3LN0JX1uPI6n7MN7OPHKacqXAxq5gYC30TdO7wqGYQyxD1OrzpobdHC3hDmlRWDg9w==}
+  /eslint-plugin-react/7.29.3_eslint@8.10.0:
+    resolution: {integrity: sha512-MzW6TuCnDOcta67CkpDyRfRsEVx9FNMDV8wZsDqe1luHPdGTrQIUaUXD27Ja3gHsdOIs/cXzNchWGlqm+qRVRg==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
@@ -4474,7 +4474,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /less-loader/10.2.0_less@4.1.2+webpack@5.69.1:
+  /less-loader/10.2.0_less@4.1.2+webpack@5.70.0:
     resolution: {integrity: sha512-AV5KHWvCezW27GT90WATaDnfXBv99llDbtaj4bshq6DvAihMdNjaPDcUMa6EXKLRF+P2opFenJp89BXg91XLYg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
@@ -4483,7 +4483,7 @@ packages:
     dependencies:
       klona: 2.0.5
       less: 4.1.2
-      webpack: 5.69.1
+      webpack: 5.70.0
     dev: true
 
   /less/4.1.2:
@@ -4918,7 +4918,7 @@ packages:
       react-dom: '*'
     dependencies:
       css-tree: 1.1.3
-      csstype: 3.0.10
+      csstype: 3.0.11
       fastest-stable-stringify: 2.0.2
       inline-style-prefixer: 6.0.1
       react: 17.0.2
@@ -6872,7 +6872,7 @@ packages:
       through: 2.3.8
     dev: false
 
-  /terser-webpack-plugin/5.3.1_webpack@5.69.1:
+  /terser-webpack-plugin/5.3.1_webpack@5.70.0:
     resolution: {integrity: sha512-GvlZdT6wPQKbDNW/GDQzZFg/j4vKU96yl2q6mcUkzKOgW4gwf1Z8cZToUCrz31XHlPWH8MVb1r2tFtdDtTGJ7g==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -6893,7 +6893,7 @@ packages:
       serialize-javascript: 6.0.0
       source-map: 0.6.1
       terser: 5.12.0
-      webpack: 5.69.1
+      webpack: 5.70.0
     dev: true
 
   /terser/5.12.0:
@@ -7219,8 +7219,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /webpack/5.69.1:
-    resolution: {integrity: sha512-+VyvOSJXZMT2V5vLzOnDuMz5GxEqLk7hKWQ56YxPW/PQRUuKimPqmEIJOx8jHYeyo65pKbapbW464mvsKbaj4A==}
+  /webpack/5.70.0:
+    resolution: {integrity: sha512-ZMWWy8CeuTTjCxbeaQI21xSswseF2oNOwc70QSKNePvmxE7XW36i7vpBMYZFAUHPwQiEbNGCEYIOOlyRbdGmxw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -7250,7 +7250,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.1_webpack@5.69.1
+      terser-webpack-plugin: 5.3.1_webpack@5.70.0
       watchpack: 2.3.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:
