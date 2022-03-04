@@ -13,7 +13,10 @@ if (process.env.vis) {
 export default defineConfig({
   plugins,
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }],
+    alias: [
+      { find: '@', replacement: '/src' },
+      { find: /^~/, replacement: '' },
+    ],
   },
   css: {
     preprocessorOptions: {
