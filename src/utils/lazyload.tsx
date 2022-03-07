@@ -1,5 +1,5 @@
 import loadable from '@loadable/component';
-import Loading from '@/components/Loading';
+import { Loading } from '@/components';
 
 type loadableProps = Parameters<typeof loadable>;
 

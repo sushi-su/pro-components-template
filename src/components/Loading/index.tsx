@@ -7,6 +7,4 @@ const style: CSSProperties = {
   left: '50%',
 };
 
-const Loading: FC = () => <Spin size="large" style={style} />;
-
-export default Loading;
+export const Loading: FC = () => <Spin size="large" style={style} />;
