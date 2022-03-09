@@ -7,7 +7,7 @@ import LogoSrc from '@/assets/logo.svg';
 const HeaderLeftContent: FC = () => {
   return (
     <Space className="flex items-center" size="middle">
-      <img src={LogoSrc} className="h-7" alt="logo" />
+      <img src={LogoSrc} className="h-[32px]" alt="logo" />
 
       <h1 className="font-medium text-lg font-sans">Vite React</h1>
     </Space>
