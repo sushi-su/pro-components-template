@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import SiderMenu from '@/layout/components/SiderMenu';
 import BaseHeader from '@/layout/components/BaseHeader';
 import BaseFooter from '@/layout/components/BaseFooter';
+import BaseBreadcrumb from '@/layout/components/BaseBreadcrumb';
 
 const { Content } = Layout;
 
@@ -15,7 +16,9 @@ const BaseLayout = () => {
         <SiderMenu />
 
         <Layout>
-          <Content className="overflow-auto">
+          <Content className="overflow-auto p-4">
+            <BaseBreadcrumb />
+
             <Outlet />
 
             <BaseFooter />
