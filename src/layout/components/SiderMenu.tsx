@@ -5,8 +5,21 @@ import { useNavigate } from 'react-router-dom';
 
 const { Sider } = Layout;
 const { Item } = Menu;
+
 const SiderMenu: FC = () => {
   const navigate = useNavigate();
+
+  const menuItems = menuRoutes.map(({ path, name, icon }) => (
+    <Item
+      icon={icon}
+      key={path}
+      onClick={() => {
+        if (path) navigate(path);
+      }}
+    >
+      {name}
+    </Item>
+  ));
 
   return (
     <Sider className="w-[200px]">
@@ -19,16 +32,7 @@ const SiderMenu: FC = () => {
         defaultOpenKeys={['sub1']}
         mode="inline"
       >
-        {menuRoutes.map(({ path, name }) => (
-          <Item
-            key={path}
-            onClick={() => {
-              if (path) navigate(path);
-            }}
-          >
-            {name}
-          </Item>
-        ))}
+        {menuItems}
       </Menu>
     </Sider>
   );

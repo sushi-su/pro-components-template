@@ -1,6 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
 import { lazyload } from '@/utils';
 import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
+import { ClearOutlined } from '@ant-design/icons';
 
 interface Route extends RouteObject {
   // 菜单上显示的名称，没有则不显示
@@ -32,8 +33,8 @@ interface Route extends RouteObject {
 
 export const menuRoutes: Route[] = [
   { path: '/login', element: lazyload(() => import('./pages/login')) },
-  { path: '/list', name: '列表', element: lazyload(() => import('./pages/list')) },
-  { path: '/table', name: '表格', element: lazyload(() => import('./pages/table')) },
+  { path: '/list', icon: <ClearOutlined />, name: '列表', element: lazyload(() => import('./pages/list')) },
+  { path: '/table', icon: <ClearOutlined />, name: '表格', element: lazyload(() => import('./pages/table')) },
 ];
 
 export const routes: Route[] = [
