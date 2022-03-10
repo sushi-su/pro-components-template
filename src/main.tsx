@@ -11,37 +11,31 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import ProProvider from '@ant-design/pro-provider';
 import './styles/global.css';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { staleTime: 60 * 1000, initialDataUpdatedAt: 200 },
-  },
-});
+const queryClient = new QueryClient();
 
-const Element: FC = () => {
-  return useRoutes(routes);
-};
+const Element: FC = () => useRoutes(routes);
 
 const App: FC = () => {
-  const values = useContext(ProProvider);
+  const proComponentContext = useContext(ProProvider);
 
   return (
-    <ProProvider.Provider value={values}>
-      <Element />
-    </ProProvider.Provider>
+    <ConfigProvider>
+      <ProProvider.Provider value={proComponentContext}>
+        <Element />
+      </ProProvider.Provider>
+    </ConfigProvider>
   );
 };
 
 render(
-  <RecoilRoot>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <ConfigProvider>
-          <App />
-        </ConfigProvider>
-      </BrowserRouter>
+  <BrowserRouter>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <App />
 
-      <ReactQueryDevtools position="bottom-right" />
-    </QueryClientProvider>
-  </RecoilRoot>,
+        <ReactQueryDevtools position="bottom-right" />
+      </QueryClientProvider>
+    </RecoilRoot>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

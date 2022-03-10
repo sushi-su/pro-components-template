@@ -1,9 +1,13 @@
 import type { FC } from 'react';
 import { Layout, Menu } from 'antd';
+import { menuRoutes } from '@/routes';
+import { useNavigate } from 'react-router-dom';
 
 const { Sider } = Layout;
-
+const { Item } = Menu;
 const SiderMenu: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <Sider className="w-[200px]">
       <Menu
@@ -15,8 +19,16 @@ const SiderMenu: FC = () => {
         defaultOpenKeys={['sub1']}
         mode="inline"
       >
-        <Menu.Item key="1">Option 1</Menu.Item>
-        <Menu.Item key="2">Option 2</Menu.Item>
+        {menuRoutes.map(({ path, name }) => (
+          <Item
+            key={path}
+            onClick={() => {
+              if (path) navigate(path);
+            }}
+          >
+            {name}
+          </Item>
+        ))}
       </Menu>
     </Sider>
   );
