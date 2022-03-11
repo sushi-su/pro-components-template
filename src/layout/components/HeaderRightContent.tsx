@@ -6,9 +6,11 @@ import classNames from 'classnames';
 
 const Notice: FC = () => {
   return (
-    <Badge count={2} className="mt-[16px]">
-      <Dropdown className={classNames(classes.iconWarp, 'w-[32px]')} overlay={<>11</>} overlayClassName="bg-white">
-        <BellOutlined />
+    <Badge count={0}>
+      <Dropdown overlay={<>11</>} overlayClassName="bg-white">
+        <div className={classNames(classes.iconWarp, 'w-8')}>
+          <BellOutlined />
+        </div>
       </Dropdown>
     </Badge>
   );

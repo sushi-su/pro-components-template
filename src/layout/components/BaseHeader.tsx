@@ -7,7 +7,7 @@ const { Header } = Layout;
 
 const BaseHeader: FC = () => {
   return (
-    <Header className="h-[60px] leading-[60px]  bg-white border-b flex justify-between items-center">
+    <Header className="bg-white border-b flex justify-between items-center">
       <HeaderLeftContent />
 
       <HeaderRightContent />

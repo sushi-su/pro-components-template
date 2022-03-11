@@ -8,6 +8,7 @@ body,
   height: 100%;
 }
 
-svg {
-  vertical-align: baseline;
+.ant-layout-header {
+  height: 60px !important;
+  line-height: 1 !important;
 }
