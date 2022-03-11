@@ -23,8 +23,17 @@ const iconStyles: CSSProperties = {
 
 const PageLogin = () => {
   const [loginType, setLoginType] = useState<LoginType>('phone');
+
   return (
-    <div style={{ backgroundColor: 'white' }}>
+    <div
+      style={{
+        backgroundImage: "url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center 110px',
+        backgroundSize: '100%',
+      }}
+      className="h-full pt-20"
+    >
       <LoginForm
         logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
         title="Github"

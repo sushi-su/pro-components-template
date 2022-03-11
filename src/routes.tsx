@@ -13,26 +13,31 @@ interface Route extends RouteObject {
   // 新页面打开
   target?: HTMLAttributeAnchorTarget;
   // 不展示顶栏
-  headerRender?: false;
+  headerRender?: boolean;
   // 不展示页脚
-  footerRender?: false;
+  footerRender?: boolean;
   // 不展示菜单
-  menuRender?: false;
+  menuRender?: boolean;
   // 不展示菜单顶栏
-  menuHeaderRender?: false;
+  menuHeaderRender?: boolean;
+  // 不展示面包屑
+  breadcrumbRender?: boolean;
   // 隐藏子菜单
   hideChildrenInMenu?: boolean;
   // 隐藏自己和子菜单
   hideInMenu?: boolean;
-  // 在面包屑中隐藏
-  hideInBreadcrumb?: boolean;
-  // 子项往上提，仍旧展示
-  flatMenu?: boolean;
   children?: Route[];
 }
 
 export const menuRoutes: Route[] = [
-  { path: '/login', element: lazyload(() => import('./pages/login')) },
+  {
+    path: '/login',
+    element: lazyload(() => import('./pages/login')),
+    headerRender: false,
+    menuHeaderRender: false,
+    footerRender: false,
+    breadcrumbRender: true,
+  },
   { path: '/list', icon: <ClearOutlined />, name: '列表', element: lazyload(() => import('./pages/list')) },
   { path: '/table', icon: <ClearOutlined />, name: '表格', element: lazyload(() => import('./pages/table')) },
 ];

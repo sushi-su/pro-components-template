@@ -4,24 +4,37 @@ import SiderMenu from '@/layout/components/SiderMenu';
 import BaseHeader from '@/layout/components/BaseHeader';
 import BaseFooter from '@/layout/components/BaseFooter';
 import BaseBreadcrumb from '@/layout/components/BaseBreadcrumb';
+import classNames from 'classnames';
 
 const { Content } = Layout;
 
+const useLayoutSetting = () => {
+  const headerRender = false;
+  const footerRender = false;
+  const menuRender = false;
+  const breadcrumbRender = false;
+  const padding = headerRender || footerRender || menuRender || breadcrumbRender;
+
+  return { headerRender, footerRender, menuRender, breadcrumbRender, padding };
+};
+
 const BaseLayout = () => {
+  const { headerRender, footerRender, menuRender, breadcrumbRender, padding } = useLayoutSetting();
+
   return (
     <Layout className="h-full">
-      <BaseHeader />
+      {headerRender && <BaseHeader />}
 
       <Layout>
-        <SiderMenu />
+        {menuRender && <SiderMenu />}
 
         <Layout>
-          <Content className="overflow-auto p-4">
-            <BaseBreadcrumb />
+          <Content className={classNames('overflow-auto', padding ? 'p-4' : '')}>
+            {breadcrumbRender && <BaseBreadcrumb />}
 
             <Outlet />
 
-            <BaseFooter />
+            {footerRender && <BaseFooter />}
           </Content>
         </Layout>
       </Layout>
