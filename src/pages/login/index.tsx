@@ -10,6 +10,7 @@ import {
 import { message, Space, Tabs } from 'antd';
 import type { CSSProperties } from 'react';
 import { useState } from 'react';
+import LogoSrc from '@/assets/logo.svg';
 
 type LoginType = 'phone' | 'account';
 
@@ -25,19 +26,11 @@ const PageLogin = () => {
   const [loginType, setLoginType] = useState<LoginType>('phone');
 
   return (
-    <div
-      style={{
-        backgroundImage: "url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg')",
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center 110px',
-        backgroundSize: '100%',
-      }}
-      className="h-full pt-20"
-    >
+    <div className="h-full pt-20 bg-[url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg')] bg-no-repeat bg-auto bg-center">
       <LoginForm
-        logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
-        title="Github"
-        subTitle="全球最大同性交友网站"
+        logo={LogoSrc}
+        title="Ant Design"
+        subTitle="Ant Design 是西湖区最具影响力的 Web 设计规范"
         actions={
           <Space>
             其他登录方式

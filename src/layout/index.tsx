@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Layout } from 'antd';
 import SiderMenu from '@/layout/components/SiderMenu';
 import BaseHeader from '@/layout/components/BaseHeader';
@@ -9,6 +9,8 @@ import classNames from 'classnames';
 const { Content } = Layout;
 
 const useLayoutSetting = () => {
+  const route = useLocation();
+  console.log(route);
   const headerRender = false;
   const footerRender = false;
   const menuRender = false;

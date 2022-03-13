@@ -31,7 +31,7 @@ interface Route extends RouteObject {
 
 export const menuRoutes: Route[] = [
   {
-    path: '/login',
+    path: '/login/:id',
     element: lazyload(() => import('./pages/login')),
     headerRender: false,
     menuHeaderRender: false,
