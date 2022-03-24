@@ -1,7 +1,7 @@
-import type { UserConfig } from 'vite';
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
+import type { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
 
 const plugins: UserConfig['plugins'] = [react()];
 
@@ -15,7 +15,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@', replacement: '/src' },
-      { find: /^~/, replacement: '' },
+      { find: /^~antd/, replacement: 'antd' },
     ],
   },
   css: {
