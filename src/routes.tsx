@@ -1,7 +1,7 @@
-import type { RouteObject } from 'react-router-dom';
 import { lazyload } from '@/utils';
-import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
 import { ClearOutlined } from '@ant-design/icons';
+import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
+import type { RouteObject } from 'react-router-dom';
 
 interface Route extends RouteObject {
   // 菜单上显示的名称，没有则不显示
@@ -31,7 +31,7 @@ interface Route extends RouteObject {
 
 export const menuRoutes: Route[] = [
   {
-    path: '/login/:id',
+    path: '/login',
     element: lazyload(() => import('./pages/login')),
     headerRender: false,
     menuHeaderRender: false,

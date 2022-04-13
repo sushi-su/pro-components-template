@@ -16,7 +16,7 @@ module.exports = {
   },
   rules: {
     // 自定义你的规则
-    '@typescript-eslint/consistent-type-imports': 'error',
+    'max-params': ['error', { max: 4 }],
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never', propElementValues: 'always' }],
   },
 };

@@ -9,6 +9,8 @@ if (process.env.vis) {
   plugins.push(visualizer({ open: true, gzipSize: true, brotliSize: true }));
 }
 
+const assetsDir = new Date().getTime().toString();
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins,
@@ -27,5 +29,8 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCase',
     },
+  },
+  build: {
+    assetsDir,
   },
 });
