@@ -1,4 +1,4 @@
-import { lazyload } from '@/utils';
+import { lazyLoad } from '@/utils';
 import { ClearOutlined } from '@ant-design/icons';
 import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
 import type { RouteObject } from 'react-router-dom';
@@ -12,40 +12,40 @@ interface Route extends RouteObject {
   access?: Key | Key[];
   // 新页面打开
   target?: HTMLAttributeAnchorTarget;
-  // 不展示顶栏
+  // 是否展示顶栏
   headerRender?: boolean;
-  // 不展示页脚
+  // 是否展示页脚
   footerRender?: boolean;
-  // 不展示菜单
+  // 是否展示菜单
   menuRender?: boolean;
-  // 不展示菜单顶栏
+  // 是否展示菜单顶栏
   menuHeaderRender?: boolean;
-  // 不展示面包屑
+  // 是否展示面包屑
   breadcrumbRender?: boolean;
-  // 隐藏子菜单
+  // 是否隐藏子菜单
   hideChildrenInMenu?: boolean;
-  // 隐藏自己和子菜单
+  // 是否隐藏自己和子菜单
   hideInMenu?: boolean;
   children?: Route[];
 }
 
-export const menuRoutes: Route[] = [
-  {
-    path: '/login',
-    element: lazyload(() => import('./pages/login')),
-    headerRender: false,
-    menuHeaderRender: false,
-    footerRender: false,
-    breadcrumbRender: true,
-  },
-  { path: '/list', icon: <ClearOutlined />, name: '列表', element: lazyload(() => import('./pages/list')) },
-  { path: '/table', icon: <ClearOutlined />, name: '表格', element: lazyload(() => import('./pages/table')) },
-];
-
-export const routes: Route[] = [
+const routes: Route[] = [
   {
     path: '/',
-    element: lazyload(() => import('./layout')),
-    children: menuRoutes,
+    element: lazyLoad(() => import('./layout')),
+    children: [
+      {
+        path: 'login',
+        element: lazyLoad('login'),
+        headerRender: false,
+        menuHeaderRender: false,
+        footerRender: false,
+        breadcrumbRender: true,
+      },
+      { path: 'list', icon: <ClearOutlined />, name: '列表', element: lazyLoad('list') },
+      { path: 'table', icon: <ClearOutlined />, name: '表格', element: lazyLoad('table') },
+    ],
   },
 ];
+
+export default routes;

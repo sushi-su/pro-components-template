@@ -7,7 +7,7 @@ import * as ReactDOMClient from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
-import { routes } from './routes';
+import routes from './routes';
 import './styles/global.css';
 
 const queryClient = new QueryClient();

@@ -1,2 +1,2 @@
-export * from './lazyload';
+export * from './lazyLoad';
 export * from './request';
