@@ -7,6 +7,7 @@ import * as ReactDOMClient from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import routes from './routes';
 import './styles/global.css';
 
@@ -33,11 +34,13 @@ if (Container) {
 
   root.render(
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <App />
+      <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
+          <App />
 
-        <ReactQueryDevtools position="bottom-right" />
-      </QueryClientProvider>
+          <ReactQueryDevtools position="bottom-right" />
+        </QueryClientProvider>
+      </RecoilRoot>
     </BrowserRouter>,
   );
 }
