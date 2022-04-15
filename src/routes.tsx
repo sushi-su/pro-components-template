@@ -3,7 +3,7 @@ import { ClearOutlined } from '@ant-design/icons';
 import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
 import type { RouteObject } from 'react-router-dom';
 
-interface Route extends RouteObject {
+export interface Route extends RouteObject {
   // 菜单上显示的名称，没有则不显示
   name?: string;
   // 菜单上显示的 Icon
@@ -29,22 +29,29 @@ interface Route extends RouteObject {
   children?: Route[];
 }
 
+export const menuRoutes = [
+  {
+    path: 'login',
+    element: lazyLoad('login'),
+    headerRender: false,
+    menuHeaderRender: false,
+    footerRender: false,
+    breadcrumbRender: true,
+  },
+  { path: 'list', icon: <ClearOutlined />, name: '列表', element: lazyLoad('list') },
+  {
+    path: 'table',
+    icon: <ClearOutlined />,
+    name: '表格',
+    children: [{ index: true, path: 'table1', icon: <ClearOutlined />, name: '表格1', element: lazyLoad('table') }],
+  },
+];
+
 const routes: Route[] = [
   {
     path: '/',
     element: lazyLoad(() => import('./layout/index')),
-    children: [
-      {
-        path: 'login',
-        element: lazyLoad('login'),
-        headerRender: false,
-        menuHeaderRender: false,
-        footerRender: false,
-        breadcrumbRender: true,
-      },
-      { path: 'list', icon: <ClearOutlined />, name: '列表', element: lazyLoad('list') },
-      { path: 'table', icon: <ClearOutlined />, name: '表格', element: lazyLoad('table') },
-    ],
+    children: menuRoutes,
   },
 ];
 
