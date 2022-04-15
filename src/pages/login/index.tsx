@@ -1,43 +1,114 @@
-import { LoginForm, ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import {
-  AlipayCircleOutlined,
+  AlipayOutlined,
   LockOutlined,
   MobileOutlined,
-  TaobaoCircleOutlined,
+  TaobaoOutlined,
   UserOutlined,
-  WeiboCircleOutlined,
+  WeiboOutlined,
 } from '@ant-design/icons';
-import { message, Space, Tabs } from 'antd';
+import { LoginFormPage, ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
+import { Button, Divider, message, Space, Tabs } from 'antd';
 import type { CSSProperties } from 'react';
 import { useState } from 'react';
-import LogoSrc from '@/assets/logo.svg';
 
 type LoginType = 'phone' | 'account';
 
 const iconStyles: CSSProperties = {
-  marginLeft: '16px',
   color: 'rgba(0, 0, 0, 0.2)',
-  fontSize: '24px',
+  fontSize: '18px',
   verticalAlign: 'middle',
   cursor: 'pointer',
 };
 
-const PageLogin = () => {
+const LoginPage = () => {
   const [loginType, setLoginType] = useState<LoginType>('phone');
-
   return (
-    <div className="h-full pt-20 bg-[url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg')] bg-no-repeat bg-auto bg-center">
-      <LoginForm
-        logo={LogoSrc}
-        title="Ant Design"
-        subTitle="Ant Design 是西湖区最具影响力的 Web 设计规范"
+    <div style={{ backgroundColor: 'white', height: 'calc(100vh - 48px)', margin: -24 }}>
+      <LoginFormPage
+        backgroundImageUrl="https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png"
+        logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
+        title="Github"
+        subTitle="全球最大同性交友网站"
+        activityConfig={{
+          style: {
+            boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.2)',
+            color: '#fff',
+            borderRadius: 8,
+            backgroundColor: '#1677FF',
+          },
+          title: '活动标题，可配置图片',
+          subTitle: '活动介绍说明文字',
+          action: (
+            <Button
+              size="large"
+              style={{
+                borderRadius: 20,
+                background: '#fff',
+                color: '#1677FF',
+                width: 120,
+              }}
+            >
+              去看看
+            </Button>
+          ),
+        }}
         actions={
-          <Space>
-            其他登录方式
-            <AlipayCircleOutlined style={iconStyles} />
-            <TaobaoCircleOutlined style={iconStyles} />
-            <WeiboCircleOutlined style={iconStyles} />
-          </Space>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Divider plain>
+              <span style={{ color: '#CCC', fontWeight: 'normal', fontSize: 14 }}>其他登录方式</span>
+            </Divider>
+            <Space align="center" size={24}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  height: 40,
+                  width: 40,
+                  border: '1px solid #D4D8DD',
+                  borderRadius: '50%',
+                }}
+              >
+                <AlipayOutlined style={{ ...iconStyles, color: '#1677FF' }} />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  height: 40,
+                  width: 40,
+                  border: '1px solid #D4D8DD',
+                  borderRadius: '50%',
+                }}
+              >
+                <TaobaoOutlined style={{ ...iconStyles, color: '#FF6A10' }} />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  height: 40,
+                  width: 40,
+                  border: '1px solid #D4D8DD',
+                  borderRadius: '50%',
+                }}
+              >
+                <WeiboOutlined style={{ ...iconStyles, color: '#333333' }} />
+              </div>
+            </Space>
+          </div>
         }
       >
         <Tabs activeKey={loginType} onChange={(activeKey) => setLoginType(activeKey as LoginType)}>
@@ -140,9 +211,9 @@ const PageLogin = () => {
             忘记密码
           </a>
         </div>
-      </LoginForm>
+      </LoginFormPage>
     </div>
   );
 };
 
-export default PageLogin;
+export default LoginPage;
