@@ -20,7 +20,7 @@ const iconStyles: CSSProperties = {
   cursor: 'pointer',
 };
 
-const LoginPage = () => {
+const PageLogin = () => {
   const [loginType, setLoginType] = useState<LoginType>('phone');
   return (
     <div style={{ backgroundColor: 'white', height: 'calc(100vh - 48px)', margin: -24 }}>
@@ -216,4 +216,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default PageLogin;

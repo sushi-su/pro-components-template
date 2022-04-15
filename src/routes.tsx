@@ -45,6 +45,14 @@ export const menuRoutes = [
     name: '表格',
     children: [{ index: true, path: 'table1', icon: <ClearOutlined />, name: '表格1', element: lazyLoad('table') }],
   },
+  {
+    path: '403',
+    element: lazyLoad('403'),
+  },
+  {
+    path: '*',
+    element: lazyLoad('404'),
+  },
 ];
 
 const routes: Route[] = [
