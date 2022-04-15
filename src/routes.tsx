@@ -1,6 +1,6 @@
 import { lazyLoad } from '@/utils';
 import { ClearOutlined } from '@ant-design/icons';
-import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
+import type { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import type { RouteObject } from 'react-router-dom';
 
 export interface Route extends RouteObject {
@@ -9,7 +9,7 @@ export interface Route extends RouteObject {
   // 菜单上显示的 Icon
   icon?: ReactNode;
   // 权限配置
-  access?: Key | Key[];
+  access?: string | string[];
   // 新页面打开
   target?: HTMLAttributeAnchorTarget;
   // 是否展示顶栏
@@ -43,7 +43,15 @@ export const menuRoutes = [
     path: 'table',
     icon: <ClearOutlined />,
     name: '表格',
-    children: [{ index: true, path: 'table1', icon: <ClearOutlined />, name: '表格1', element: lazyLoad('table') }],
+    children: [
+      {
+        index: true,
+        path: 'table1',
+        access: 'table1',
+        name: '表格1',
+        element: lazyLoad('table'),
+      },
+    ],
   },
   {
     path: '403',

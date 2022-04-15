@@ -45,8 +45,6 @@ const initialState = selector<InitialState>({
       set(initialLoadingState, initialLoadingStateData);
       return;
     }
-
-    console.log(Object.keys(newState));
   },
 });
 
