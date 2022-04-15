@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc && vite build",
+    "clean": "rimraf dist stats.html node_modules pnpm-lock.yaml",
     "dev": "vite",
     "eslint": "eslint src/ --ext .ts,.tsx --fix",
     "lint": "npm run eslint && npm run stylelint",

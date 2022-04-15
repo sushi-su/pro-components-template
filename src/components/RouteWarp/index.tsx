@@ -1,7 +1,6 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
-const RouteWarp: FC = () => {
+export const RouteWarp: FC = () => {
   return null;
 };
 
-export default RouteWarp;
