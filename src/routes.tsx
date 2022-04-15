@@ -1,3 +1,4 @@
+import { Redirect } from '@/components';
 import { lazyLoad } from '@/utils';
 import { ClearOutlined } from '@ant-design/icons';
 import type { HTMLAttributeAnchorTarget, Key, ReactNode } from 'react';
@@ -43,6 +44,7 @@ export const menuRoutes = [
     path: 'table',
     icon: <ClearOutlined />,
     name: '表格',
+    element: <Redirect to="/table/table1" />,
     children: [{ index: true, path: 'table1', icon: <ClearOutlined />, name: '表格1', element: lazyLoad('table') }],
   },
   {
