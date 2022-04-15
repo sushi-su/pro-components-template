@@ -32,7 +32,7 @@ interface Route extends RouteObject {
 const routes: Route[] = [
   {
     path: '/',
-    element: lazyLoad(() => import('./layout')),
+    element: lazyLoad(() => import('./layout/index')),
     children: [
       {
         path: 'login',
