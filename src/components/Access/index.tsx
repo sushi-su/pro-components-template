@@ -1,11 +1,17 @@
-import { FC, Fragment, ReactElement, ReactNode } from 'react';
+import { createElement, FC, Fragment, ReactElement, ReactNode } from 'react';
 
+/**
+ * @visibleName Access
+ * @param accessible 权限判断
+ * @param children 11
+ * @param fallback 11
+ */
 export const Access: FC<{ accessible: boolean; children: ReactNode; fallback?: ReactElement }> = ({
-  accessible,
+  accessible = false,
   children,
   fallback,
 }) => {
-  if (accessible) return <Fragment key="accessible">{children}</Fragment>;
+  if (accessible) return createElement(Fragment, null, children);
 
   if (fallback) return fallback;
 

@@ -59,7 +59,7 @@ export const getRoutesSettingMap = (routes: Route[], path = ''): Record<string, 
   return result;
 };
 
-export const checkPermission = (routeAccess: string | string[], userAccess: Record<string, boolean>) => {
+export const checkAccess = (routeAccess: string | string[], userAccess: Record<string, boolean>) => {
   if (!routeAccess) {
     return true;
   }
@@ -69,7 +69,7 @@ export const checkPermission = (routeAccess: string | string[], userAccess: Reco
     : userAccess?.[routeAccess] ?? false;
 };
 
-export const getPermissionRoutes = (routes: Route[], access: Record<string, boolean>): MenuRoute[] => {
+export const getAccessMenuRoutes = (routes: Route[], access: Record<string, boolean>): MenuRoute[] => {
   const result: MenuRoute[] = [];
 
   routes.forEach((item) => {
@@ -86,13 +86,13 @@ export const getPermissionRoutes = (routes: Route[], access: Record<string, bool
     };
 
     if (children) {
-      if (menuAccess && !checkPermission(menuAccess, access)) {
+      if (menuAccess && !checkAccess(menuAccess, access)) {
         return;
       }
 
-      const routes = getPermissionRoutes(children, access);
+      const routes = getAccessMenuRoutes(children, access);
 
-      if (routes.length) {
+      if (routes.length > 0) {
         result.push({
           ...menuItem,
           routes,
@@ -106,7 +106,7 @@ export const getPermissionRoutes = (routes: Route[], access: Record<string, bool
       return;
     }
 
-    if (checkPermission(menuAccess, access)) {
+    if (checkAccess(menuAccess, access)) {
       result.push(item);
       return;
     }

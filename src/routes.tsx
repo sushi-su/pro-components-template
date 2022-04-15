@@ -26,6 +26,7 @@ export interface Route extends RouteObject {
   hideChildrenInMenu?: boolean;
   // 是否隐藏自己和子菜单
   hideInMenu?: boolean;
+
   children?: Route[];
 }
 
@@ -53,21 +54,23 @@ export const menuRoutes = [
       },
     ],
   },
-  {
-    path: '403',
-    element: lazyLoad('403'),
-  },
-  {
-    path: '*',
-    element: lazyLoad('404'),
-  },
 ];
 
 const routes: Route[] = [
   {
     path: '/',
     element: lazyLoad(() => import('./layout/index')),
-    children: menuRoutes,
+    children: [
+      ...menuRoutes,
+      {
+        path: '403',
+        element: lazyLoad('403'),
+      },
+      {
+        path: '*',
+        element: lazyLoad('404'),
+      },
+    ],
   },
 ];
 
