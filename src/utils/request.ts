@@ -1,8 +1,10 @@
+import type { API } from '@/typings';
+import type { AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 
 const instance = axios.create({
   baseURL: 'https://some-domain.com/api/',
-  timeout: 1000,
+  timeout: 1000 * 3,
 });
 
 // Add a request interceptor
@@ -22,6 +24,7 @@ instance.interceptors.response.use(
   (response) => {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+
     return response;
   },
   (error) => {
@@ -31,4 +34,10 @@ instance.interceptors.response.use(
   },
 );
 
-export const request = axios;
+type Request = <D>(config: AxiosRequestConfig) => Promise<API.Response<D>>;
+
+export const request: Request = async (config) => {
+  const { data } = await instance(config);
+
+  return data;
+};

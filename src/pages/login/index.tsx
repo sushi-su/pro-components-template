@@ -1,3 +1,4 @@
+import { reqLogin } from '@/services/account';
 import {
   AlipayOutlined,
   LockOutlined,
@@ -22,7 +23,7 @@ const iconStyles: CSSProperties = {
 };
 
 const PageLogin = () => {
-  const [loginType, setLoginType] = useState<LoginType>('phone');
+  const [loginType, setLoginType] = useState<LoginType>('account');
   const navigate = useNavigate();
   return (
     <div className="bg-white h-[100vh] m-[-24px]">
@@ -90,7 +91,7 @@ const PageLogin = () => {
           </div>
         }
         onFinish={async () => {
-          message.success('登录成功');
+          await reqLogin();
           navigate('/');
         }}
       >

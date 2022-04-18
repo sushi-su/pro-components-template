@@ -1,3 +1,6 @@
+import '@/mock';
+import routes from '@/routes';
+import '@/styles/global.css';
 import ProProvider from '@ant-design/pro-provider';
 import { ConfigProvider } from 'antd';
 import 'antd/dist/antd.variable.min.css';
@@ -8,8 +11,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import routes from './routes';
-import './styles/global.css';
 
 const queryClient = new QueryClient();
 
