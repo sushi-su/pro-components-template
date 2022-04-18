@@ -16,7 +16,7 @@ export default defineConfig({
   plugins,
   resolve: {
     alias: [
-      { find: '@', replacement: '/src' },
+      { find: '@/', replacement: '/src/' },
       { find: /^~antd/, replacement: 'antd' },
     ],
   },
