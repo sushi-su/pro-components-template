@@ -1,7 +1,8 @@
+import Footer from '@/layout/footer';
 import { menuRoutes } from '@/routes';
 import { accessState } from '@/store';
 import { checkAccess, getAccessMenuRoutes, getRoutesSettingMap } from '@/utils';
-import { PageContainer, ProLayout } from '@ant-design/pro-layout';
+import { ProLayout } from '@ant-design/pro-layout';
 import { ProLayoutProps } from '@ant-design/pro-layout/es/ProLayout';
 import { MenuDataItem } from '@ant-design/pro-layout/lib/typings';
 import { ReactNode, useEffect, useMemo } from 'react';
@@ -10,12 +11,16 @@ import { useRecoilValue } from 'recoil';
 
 const routesSettingMap = getRoutesSettingMap(menuRoutes);
 
-const menuItemRender = (menuItemProps: MenuDataItem, defaultDom: ReactNode) => {
+const menuItemRender: ProLayoutProps['menuItemRender'] = (menuItemProps: MenuDataItem, defaultDom: ReactNode) => {
   if (menuItemProps?.path) {
     return <Link to={menuItemProps.path}>{defaultDom}</Link>;
   }
 
   return defaultDom;
+};
+
+const footerRender: ProLayoutProps['footerRender'] = () => {
+  return <Footer />;
 };
 
 const BaseLayout = () => {
@@ -43,10 +48,6 @@ const BaseLayout = () => {
           headerRender: true,
           footerRender: true,
           menuRender: true,
-          menuHeaderRender: true,
-          breadcrumbRender: true,
-          hideChildrenInMenu: false,
-          hideInMenu: false,
         };
   }, [access, pathname]);
 
@@ -57,10 +58,16 @@ const BaseLayout = () => {
   }, [routeSetting]);
 
   return (
-    <ProLayout layout="mix" route={route} onMenuHeaderClick={onMenuHeaderClick} menuItemRender={menuItemRender}>
-      <PageContainer>
-        <Outlet />
-      </PageContainer>
+    <ProLayout
+      layout="mix"
+      route={route}
+      onMenuHeaderClick={onMenuHeaderClick}
+      menuItemRender={menuItemRender}
+      menuRender={routeSetting.menuRender === false ? false : undefined}
+      headerRender={routeSetting.headerRender === false ? false : undefined}
+      footerRender={routeSetting.footerRender === false ? false : footerRender}
+    >
+      <Outlet />
     </ProLayout>
   );
 };

@@ -18,14 +18,6 @@ export interface Route extends RouteObject {
   footerRender?: boolean;
   // 是否展示菜单
   menuRender?: boolean;
-  // 是否展示菜单顶栏
-  menuHeaderRender?: boolean;
-  // 是否展示面包屑
-  breadcrumbRender?: boolean;
-  // 是否隐藏子菜单
-  hideChildrenInMenu?: boolean;
-  // 是否隐藏自己和子菜单
-  hideInMenu?: boolean;
 
   children?: Route[];
 }
@@ -35,9 +27,8 @@ export const menuRoutes = [
     path: 'login',
     element: lazyLoad('login'),
     headerRender: false,
-    menuHeaderRender: false,
     footerRender: false,
-    breadcrumbRender: true,
+    menuRender: false,
   },
   { path: 'list', icon: <ClearOutlined />, name: '列表', element: lazyLoad('list') },
   {

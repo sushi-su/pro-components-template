@@ -2,20 +2,7 @@ import { Route } from '@/routes';
 import { Route as MenuRoute } from '@ant-design/pro-layout/lib/typings';
 import { isArray } from 'lodash';
 
-export type RouteSettings = Required<
-  Pick<
-    Route,
-    | 'access'
-    | 'target'
-    | 'headerRender'
-    | 'footerRender'
-    | 'menuRender'
-    | 'menuHeaderRender'
-    | 'breadcrumbRender'
-    | 'hideChildrenInMenu'
-    | 'hideInMenu'
-  >
->;
+export type RouteSettings = Required<Pick<Route, 'access' | 'target' | 'headerRender' | 'footerRender' | 'menuRender'>>;
 
 export const getRoutesSettingMap = (routes: Route[], path = ''): Record<string, RouteSettings> => {
   const result: Record<string, RouteSettings> = {};
@@ -26,17 +13,7 @@ export const getRoutesSettingMap = (routes: Route[], path = ''): Record<string, 
     if (item.path) {
       routePath = `${path}/${item.path}`;
 
-      const {
-        access = '',
-        target = '_self',
-        headerRender = true,
-        footerRender = true,
-        menuRender = true,
-        menuHeaderRender = true,
-        breadcrumbRender = true,
-        hideChildrenInMenu = false,
-        hideInMenu = false,
-      } = item;
+      const { access = '', target = '_self', headerRender = true, footerRender = true, menuRender = true } = item;
 
       result[routePath] = {
         access,
@@ -44,10 +21,6 @@ export const getRoutesSettingMap = (routes: Route[], path = ''): Record<string, 
         headerRender,
         footerRender,
         menuRender,
-        menuHeaderRender,
-        breadcrumbRender,
-        hideChildrenInMenu,
-        hideInMenu,
       };
     }
 
