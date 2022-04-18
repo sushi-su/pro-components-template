@@ -4,9 +4,10 @@ import { menuRoutes } from '@/routes';
 import { accessState } from '@/store';
 import { checkAccess, getAccessMenuRoutes, getRoutesSettingMap } from '@/utils';
 import { ProLayout } from '@ant-design/pro-layout';
-import { ProLayoutProps } from '@ant-design/pro-layout/es/ProLayout';
-import { MenuDataItem } from '@ant-design/pro-layout/lib/typings';
-import { ReactNode, useEffect, useMemo } from 'react';
+import type { ProLayoutProps } from '@ant-design/pro-layout/es/ProLayout';
+import type { MenuDataItem } from '@ant-design/pro-layout/lib/typings';
+import type { ReactNode } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 

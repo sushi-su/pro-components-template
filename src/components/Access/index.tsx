@@ -1,4 +1,5 @@
-import { createElement, FC, Fragment, ReactElement, ReactNode } from 'react';
+import type { FC, ReactElement, ReactNode } from 'react';
+import { createElement, Fragment } from 'react';
 
 /**
  * @visibleName Access

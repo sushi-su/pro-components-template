@@ -2,7 +2,7 @@ import ProProvider from '@ant-design/pro-provider';
 import { ConfigProvider } from 'antd';
 import 'antd/dist/antd.variable.min.css';
 import type { FC } from 'react';
-import { useContext } from 'react';
+import { StrictMode, useContext } from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -33,14 +33,16 @@ if (Container) {
   const root = ReactDOMClient.createRoot(Container);
 
   root.render(
-    <BrowserRouter>
-      <RecoilRoot>
-        <QueryClientProvider client={queryClient}>
-          <App />
+    <StrictMode>
+      <BrowserRouter>
+        <RecoilRoot>
+          <QueryClientProvider client={queryClient}>
+            <App />
 
-          <ReactQueryDevtools position="bottom-right" />
-        </QueryClientProvider>
-      </RecoilRoot>
-    </BrowserRouter>,
+            <ReactQueryDevtools position="bottom-right" />
+          </QueryClientProvider>
+        </RecoilRoot>
+      </BrowserRouter>
+    </StrictMode>,
   );
 }

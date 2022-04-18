@@ -1,5 +1,5 @@
-import type { CSSProperties, FC } from 'react';
 import { Spin } from 'antd';
+import type { CSSProperties, FC } from 'react';
 
 const style: CSSProperties = {
   position: 'absolute',

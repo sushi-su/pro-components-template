@@ -1,5 +1,5 @@
-import { Route } from '@/routes';
-import { Route as MenuRoute } from '@ant-design/pro-layout/lib/typings';
+import type { Route } from '@/routes';
+import type { Route as MenuRoute } from '@ant-design/pro-layout/lib/typings';
 import { isArray } from 'lodash';
 
 export type RouteSettings = Required<Pick<Route, 'access' | 'target' | 'headerRender' | 'footerRender' | 'menuRender'>>;
