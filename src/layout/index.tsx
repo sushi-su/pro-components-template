@@ -1,4 +1,5 @@
-import Footer from '@/layout/footer';
+import Footer from '@/layout/Footer';
+import HeaderContent from '@/layout/HeaderContent';
 import { menuRoutes } from '@/routes';
 import { accessState } from '@/store';
 import { checkAccess, getAccessMenuRoutes, getRoutesSettingMap } from '@/utils';
@@ -21,6 +22,10 @@ const menuItemRender: ProLayoutProps['menuItemRender'] = (menuItemProps: MenuDat
 
 const footerRender: ProLayoutProps['footerRender'] = () => {
   return <Footer />;
+};
+
+const headerContentRender: ProLayoutProps['headerContentRender'] = () => {
+  return <HeaderContent />;
 };
 
 const BaseLayout = () => {
@@ -63,6 +68,7 @@ const BaseLayout = () => {
       route={route}
       onMenuHeaderClick={onMenuHeaderClick}
       menuItemRender={menuItemRender}
+      headerContentRender={headerContentRender}
       menuRender={routeSetting.menuRender === false ? false : undefined}
       headerRender={routeSetting.headerRender === false ? false : undefined}
       footerRender={routeSetting.footerRender === false ? false : footerRender}
