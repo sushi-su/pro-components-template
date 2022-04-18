@@ -7,9 +7,10 @@ import {
   WeiboOutlined,
 } from '@ant-design/icons';
 import { LoginFormPage, ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Button, Divider, message, Space, Tabs } from 'antd';
+import { Divider, message, Space, Tabs } from 'antd';
 import type { CSSProperties } from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type LoginType = 'phone' | 'account';
 
@@ -22,36 +23,14 @@ const iconStyles: CSSProperties = {
 
 const PageLogin = () => {
   const [loginType, setLoginType] = useState<LoginType>('phone');
+  const navigate = useNavigate();
   return (
-    <div style={{ backgroundColor: 'white', height: 'calc(100vh - 48px)', margin: -24 }}>
+    <div className="bg-white h-[100vh] m-[-24px]">
       <LoginFormPage
         backgroundImageUrl="https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png"
         logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
         title="Github"
         subTitle="全球最大同性交友网站"
-        activityConfig={{
-          style: {
-            boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.2)',
-            color: '#fff',
-            borderRadius: 8,
-            backgroundColor: '#1677FF',
-          },
-          title: '活动标题，可配置图片',
-          subTitle: '活动介绍说明文字',
-          action: (
-            <Button
-              size="large"
-              style={{
-                borderRadius: 20,
-                background: '#fff',
-                color: '#1677FF',
-                width: 120,
-              }}
-            >
-              去看看
-            </Button>
-          ),
-        }}
         actions={
           <div
             style={{
@@ -110,6 +89,10 @@ const PageLogin = () => {
             </Space>
           </div>
         }
+        onFinish={async () => {
+          message.success('登录成功');
+          navigate('/');
+        }}
       >
         <Tabs activeKey={loginType} onChange={(activeKey) => setLoginType(activeKey as LoginType)}>
           <Tabs.TabPane key="account" tab="账号密码登录" />
