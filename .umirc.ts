@@ -6,5 +6,6 @@ export default defineConfig({
   tailwindcss: {},
   layout: {},
   antd: {},
+  request: {},
   routes,
 });
