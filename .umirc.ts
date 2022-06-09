@@ -7,5 +7,10 @@ export default defineConfig({
   layout: {},
   antd: {},
   request: {},
+  model: {},
+  initialState: {
+    loading: '@/Loading',
+  },
+  access: {},
   routes,
 });

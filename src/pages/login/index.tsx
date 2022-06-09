@@ -7,6 +7,7 @@ import {
   WeiboOutlined,
 } from '@ant-design/icons';
 import { LoginFormPage, ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-components';
+import { useModel } from '@umijs/max';
 import { Divider, message, Space, Tabs } from 'antd';
 import type { CSSProperties } from 'react';
 import { useState } from 'react';
@@ -21,6 +22,8 @@ const iconStyles: CSSProperties = {
 };
 
 export default () => {
+  const { initialState } = useModel('@@initialState');
+  console.log(initialState);
   const [loginType, setLoginType] = useState<LoginType>('phone');
 
   return (
