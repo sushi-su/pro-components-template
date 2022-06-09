@@ -8,9 +8,8 @@ export default defineConfig({
   antd: {},
   request: {},
   model: {},
-  initialState: {
-    loading: '@/Loading',
-  },
+  initialState: {},
+  moment2dayjs: {},
   access: {},
   routes,
 });
